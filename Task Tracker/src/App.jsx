@@ -1,16 +1,17 @@
 import { useState } from "react";
 import "./App.css";
-import Header from "./components/Header";
 import Navbar from "./components/Navbar";
+import Day from "./components/Day"
+import Footer from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
-    <>
-      <Header />
+    <div className="d-flex flex-column min-vh-100 container-fluid">
       <Navbar />
-    </>
+      <Day day = "Monday"/>
+      <Footer/>
+    </div>
   );
 }
 
