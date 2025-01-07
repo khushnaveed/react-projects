@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TaskCount from "./TaskCount";
 import Tasks from "./Tasks";
 
@@ -6,19 +6,25 @@ export default function Day(props) {
   const [taskCount, setTaskCount] = useState(0);
   const [titleValue, setTiltle] = useState("");
   const [descriptionValue, setDescription] = useState("");
+  const [tasks, setTasks] = useState([]);
 
   const taskAdd = () => {
     if (!titleValue && !descriptionValue) {
-      window.alert("Enter text to the requried fields.")
+      window.alert("Enter text to the requried fields.");
     } else {
-      console.log("add button click");
-      console.log("title", titleValue);
-      console.log("description", descriptionValue);
+      const newTask = { title: titleValue, description: descriptionValue };
+      setTasks([...tasks, newTask]);
+      setTaskCount(taskCount + 1);
       setTiltle("");
       setDescription("");
-      setTaskCount(taskCount+1);
     }
   };
+
+  useEffect(() => {
+    if (tasks.length > 0) {
+      console.log("Updated tasks:", tasks);
+    }
+  }, [tasks]);
 
   const getTitle = (event) => {
     setTiltle(event.target.value);
@@ -66,10 +72,8 @@ export default function Day(props) {
             Add
           </button>
         </div>
-
       </div>
-
-      <Tasks title={titleValue} description={descriptionValue} />
+      <Tasks tasks={tasks} />
     </>
   );
 }
