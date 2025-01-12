@@ -1,0 +1,1 @@
+.sidebar{width:280px;height:100vh;transition:transform .3s ease-in-out}@media (max-width: 991.98px){.sidebar{position:fixed;left:0;top:0;z-index:1000;transform:translate(-100%)}.sidebar.show{transform:translate(0)}}.nav-link{transition:all .2s ease-in-out}.nav-link:hover{background-color:var(--bs-primary-bg-subtle);color:var(--bs-primary)}
