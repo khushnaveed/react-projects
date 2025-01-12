@@ -1,6 +1,8 @@
 import React from "react";
 
 export default function Navbar() {
+
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -22,11 +24,6 @@ export default function Navbar() {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0 ">
-            <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="/">
-                Notes
-              </a>
-            </li>
             <li className="nav-item">
               <a className="nav-link" href="/">
                 Monday
@@ -69,5 +66,7 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+    
+    
   );
 }
